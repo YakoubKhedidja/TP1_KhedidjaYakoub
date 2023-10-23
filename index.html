@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/CSS/styles.css">
+    <title>Librairie de Livres</title>
+</head>
+<body>
+    <header>
+        <h1>TP1</h1>
+        <div id="cart" class="cart">
+            <img src="./assets/img/cart_svg.png" alt="Panier">
+            <span id="cart-count">0</span>
+        </div>
+    </header>
+    <div class="grid-container">
+        <nav>
+            <ul id="filters" class="filters">
+                <li><a class="filtre hover-underline-animation" href="#" data-filtre="Tous">Tous</a></li>
+                <li><a class="filtre hover-underline-animation" href="#" data-filtre="Nouveautés">Nouveautés</a></li>
+                <li><a class="filtre hover-underline-animation" href="#" data-filtre="Littérature">Littérature</a></li>
+                <li><a class="filtre hover-underline-animation" href="#" data-filtre="Art de vivre">Art de vivre</a></li>
+                <li><a class="filtre hover-underline-animation" href="#" data-filtre="BD, Jeunesse, Humour">BD, Jeunesse, Humour</a></li>
+                <li><a class="filtre hover-underline-animation" href="#" data-filtre="Culture et société">Culture et société</a></li>
+                <li><a class="filtre hover-underline-animation" href="#" data-filtre="Loisirs, Tourisme, Nature">Loisirs, Tourisme, Nature</a></li>
+                <li><a class="filtre hover-underline-animation" href="#" data-filtre="Savoir et science">Savoir et science</a></li>
+            </ul>
+        </nav>
+        <div class="main-content">
+            <!-- Les livres seront affichés dynamiquement ici -->
+        </div>
+    </div>
+
+    <dialog id="modal" class="modal">
+        <div class="modal-content">
+            <img id="modal-image" src="" alt="Book Cover" class="modal-image">
+            <div class="texte-modal">
+                <p>Titre: <span id="modal-titre"></span></p>
+                <p>Auteur: <span id="modal-auteur"></span></p>
+                <p>Éditeur: <span id="modal-editeur"></span></p>
+                <p>Pages: <span id="modal-pages"></span></p>
+                <p><span id="modal-description"></span></p>
+                <button id="modal-close">X</button>
+            </div>
+        </div>
+    </dialog>
+    
+
+    <dialog id="cart-modal cart-modal-close" class="cart-modal cart-modal-close">
+        <div class="cart-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Livre</th>
+                        <th>Prix</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-contents">
+                    <!-- Le contenu du panier sera ajouté dynamiquement ici -->
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td id="cart-total">Total</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </dialog>
+    
+    <script type="module" src="./assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,256 @@
+/* Réinitialisation des styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles généraux pour le corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+/* Styles pour l'en-tête */
+header {
+    background-color: white;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+header h1 {
+    font-size: 24px;
+    padding-left: 60px;
+    margin: 0;
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-right: 60px;
+}
+
+.cart img {
+    width: 30px;
+    margin-right: 5px;
+}
+
+/* Styles pour la navigation */
+nav {
+    padding: 10px 0;
+}
+
+ul {
+    padding-left: 60px;
+    padding-top: 30px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav li {
+    margin: 0 10px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.filters li {
+    cursor: pointer;
+    margin: 10px 0;
+    text-decoration: none;
+}
+
+.filters li:hover {
+    text-decoration: underline;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.books {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+}
+
+/* Styles pour la boite modale du panier */
+.modal {
+    position: fixed;
+    top: 10vh;
+    left: 20vw;
+    max-width: 60vw;
+    min-width: 59.99vw;
+    max-height: 80vh;
+    min-height: 79.99vh;
+    border: none;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+/* styles pour souligner le filtre cliqués dans le menu de navigation  */
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+}
+
+.hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background-color: black;
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+}
+
+.hover-underline-animation:hover::after,
+.hover-underline-animation:focus::after {
+  opacity: 1;
+  transform: translate3d(0, 0.2em, 0);
+}
+
+/* style pour le grid container de la page d'accueil */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr; 
+    gap: 20px;
+}
+
+.grid-container a{
+    text-decoration: none;
+}
+
+/* Styles pour les tuiles de livres */
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-right: 60px;
+    gap: 20px;
+    margin: 20px;
+}
+
+.livre-tuile {
+    background-color: white;
+    padding: 10px;
+    position: relative;
+    min-height: 330px;
+}
+
+.livre-tuile img {
+    max-width: 100%;
+    height: auto;
+}
+
+.livre-tuile h2 {
+    font-size: 16px;
+    margin: 10px 0;
+    text-decoration: none;
+    color: black;
+    font-weight: lighter;
+}
+
+.livre-tuile p {
+    font-size: 14px;
+    margin: 5px 0;
+    display: inline-block;
+    color: black;
+}
+
+.ajouter-au-panier {
+    border: solid 1px black;
+    background-color: white;
+    color: black;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    float: right;
+}
+
+.ajouter-au-panier:hover {
+    background-color: #2980b9;
+}
+
+.tuile-contenu {
+    position: absolute;
+    bottom: 0;
+    width: 93%;
+    background-color: white;
+}
+
+/* Styles pour la boite modale des livres */
+
+.modal-content {
+    margin: 5%;
+    display: inline-flex;
+    gap: 8vw;
+}
+
+.texte-modal{
+    align-self: center;
+    max-width: 25vw;
+    margin-top: 2vh;
+}
+
+.texte-modal p{
+    padding-bottom: 2vh;
+}
+
+.texte-modal span{
+    font-size: large;
+}
+
+.modal-image {
+    margin-top: 2vh;
+    max-height: 60vh;
+}
+
+#modal-description {
+    padding-top: 3vh;
+    font-size: medium;
+}
+
+#modal-close {
+    background-color: white;
+    font-size: large;
+    font-weight: bold;
+    border: none;
+    position: absolute;
+    top: 1vh;
+    right: 2vh;
+}
+
+dialog:-internal-dialog-in-top-layer::backdrop {
+    position: fixed;
+    inset: 0px;
+    background: rgba(0, 0, 0, 0.7);
+}
